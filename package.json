@@ -1,0 +1,36 @@
+{
+  "author": "Antonio Santiago <asantiagop@gmail.com> (http://acuriousanimal.com/blog)",
+  "name": "clydeio-cache",
+  "homepage": "https://github.com/acanimal/clyde-cache",
+  "description": "Cache filter for Clyde API gateway.",
+  "keywords": [
+    "clyde",
+    "filter",
+    "cache"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/acanimal/clyde-cache.git"
+  },
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js **/*.js",
+    "test": "./node_modules/mocha/bin/mocha test/**/*.test.js"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "eslint": "^0.24.0",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
+  }
+}
