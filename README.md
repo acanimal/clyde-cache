@@ -2,7 +2,7 @@
 
 Memory cache filter implementation for Clyde API gateway.
 
-> Implementation is based on [node-cache](https://github.com/tcs-de/nodecache) module.
+> Implementation is based on [node-cache][node-cache] module.
 
 <!-- MarkdownTOC -->
 
@@ -14,6 +14,18 @@ Memory cache filter implementation for Clyde API gateway.
 <!-- /MarkdownTOC -->
 
 ## Configuration
+
+The memory cache filter passes the configuration options directly to the [node-cache][node-cache] module, so the available options are the same:
+
+- `stdTTL`: *(default: `0`)* the standard ttl as number in seconds for every generated cache element.  
+`0` = unlimited
+- `checkperiod`: *(default: `600`)* The period in seconds, as a number, used for the automatic delete check interval.  
+`0` = no periodic check.  
+**Note:** If you use `checkperiod > 0` you script will not exit at the end, because a internal timeout will always be active.
+- `useClones`: *(default: `true`)* en/disable cloning of variables. If `true` you'll get a copy of the cached variable. If `false` you'll save and get just the reference.  
+**Note:** `true` is recommended, because it'll behave like a sever-based caching. You should set `false` if you want to save complex varibale types like functions, promises, regexp, ...
+
+
 
 ## Examples
 
@@ -44,3 +56,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[node-cache]: https://github.com/tcs-de/nodecache
