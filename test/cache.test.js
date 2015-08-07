@@ -2,6 +2,7 @@
 
 var path = require("path"),
     request = require("supertest"),
+    expect = require("chai").expect,
     http = require("http"),
     clyde = require("clydeio");
 
@@ -32,7 +33,7 @@ describe("cache", function() {
         {
           id: "id",
           context: "/provider",
-          target: "http://localhost:4000"
+          target: "http://localhost:8888"
         }
       ]
     };
@@ -42,28 +43,20 @@ describe("cache", function() {
     server = http.createServer(middleware);
     server.listen(options.port);
 
-    // Make request which expects a 404 erro
+    // Make request which expects a 404 error
     request("http://localhost:8888")
-      .get("/provider?query=1")
-      // .expect("X-Cache", "HIT")
-      // .expect(200, "cache data")
+      .get("/foo?query=1")
       .end(function(err, res) {
-        if (err) {
-          throw err;
-        }
-        console.log("-> response headers: ", res.headers);
+        // .expect() doesn't work because we are getting a 404 error and using
+        // the .end() method too. So we need to make by hand
+        expect(res.statusCode).to.be.equal(404);
+        expect(res.headers["x-cache"]).to.be.equal("MISS");
 
+        // Make a second request
         request("http://localhost:8888")
-          .get("/provider?query=1")
-          // .expect("X-Cache", "HIT")
-          // .expect(200, "cache data")
-          .end(function(err2, res2) {
-            if (err2) {
-              throw err2;
-            }
-            console.log("-> response headers: ", res2.headers);
-            done();
-          });
+          .get("/foo?query=1")
+          .expect("X-Cache", "HIT")
+          .expect(404, done);
       });
   });
 
