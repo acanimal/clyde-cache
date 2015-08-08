@@ -9,14 +9,16 @@ The filter works as an in memory `<key, value>` cache. For each request it cache
 If the property `ignoreQuery=true` the *key* will contain only the `path` part of the `url` and will ignore the `query`, for example, these URLs will be treated as the same: `/some_path?param1=a&param2=b`, `/some_path?abc` or `/some_path`.
 
 
-<!-- MarkdownTOC -->
+<!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- Configuration
-  - Examples
-  - Notes
-- License
-
-<!-- /MarkdownTOC -->
+- [Memory Cache Filter](#memory-cache-filter)
+	- [Configuration](#configuration)
+	- [Examples](#examples)
+		- [Global cache with default configuration](#global-cache-with-default-configuration)
+		- [Provider's cache ignoring URL query part and with a TTL of 5 minutes](#providers-cache-ignoring-url-query-part-and-with-a-ttl-of-5-minutes)
+	- [Notes](#notes)
+- [License](#license)
+<!-- /TOC -->
 
 ## Configuration
 
