@@ -46,7 +46,7 @@ describe("cache", function() {
     // Make request which expects a 404 error
     request("http://localhost:8888")
       .get("/foo?query=1")
-      .end(function(err, res) {
+      .end(function(err, res) { // eslint-disable-line handle-callback-err
         // .expect() doesn't work because we are getting a 404 error and using
         // the .end() method too. So we need to make by hand
         expect(res.statusCode).to.be.equal(404);
@@ -69,7 +69,7 @@ describe("cache", function() {
       prefilters: [
         {
           id: "cache",
-          path: path.join(__dirname, "../lib/index.js"),
+          path: path.join(__dirname, "../lib/index.js")
         }
       ],
 
@@ -90,7 +90,7 @@ describe("cache", function() {
     // Make request which expects a 404 error
     request("http://localhost:8888")
       .get("/foo?query=1")
-      .end(function(err, res) {
+      .end(function(err, res) { // eslint-disable-line handle-callback-err
         // .expect() doesn't work because we are getting a 404 error and using
         // the .end() method too. So we need to make by hand
         expect(res.statusCode).to.be.equal(404);
@@ -137,7 +137,7 @@ describe("cache", function() {
     // Make request which expects a 404 error
     request("http://localhost:8888")
       .get("/foo?query=1")
-      .end(function(err, res) {
+      .end(function(err, res) { // eslint-disable-line handle-callback-err
         // .expect() doesn't work because we are getting a 404 error and using
         // the .end() method too. So we need to make by hand
         expect(res.statusCode).to.be.equal(404);
