@@ -1,10 +1,10 @@
 {
-  "author": "Antonio Santiago <asantiagop@gmail.com> (http://acuriousanimal.com/blog)",
+  "author": "Antonio Santiago <asantiagop@gmail.com> (http://acuriousanimal.com)",
   "name": "clydeio-memory-cache",
-  "homepage": "https://github.com/clydeio/clyde-memory-cache",
+  "homepage": "https://github.com/clydeio/clydeio-memory-cache",
   "description": "Memory cache filter for Clyde API gateway.",
   "keywords": [
-    "clyde",
+    "clydeio",
     "filter",
     "cache",
     "memory"
@@ -12,7 +12,7 @@
   "version": "0.1.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/clydeio/clyde-memory-cache.git"
+    "url": "https://github.com/clydeio/clydeio-memory-cache.git"
   },
   "main": "./lib/index.js",
   "directories": {

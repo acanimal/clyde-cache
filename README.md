@@ -8,10 +8,10 @@ The filter works as an in memory `<key, value>` cache. For each request it cache
 
 If the property `ignoreQuery=true` the *key* will contain only the `path` part of the `url` and will ignore the `query`, for example, these URLs will be treated as the same: `/some_path?param1=a&param2=b`, `/some_path?abc` or `/some_path`.
 
-
 <!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Memory Cache Filter](#memory-cache-filter)
+	- [Installation](#installation)
 	- [Configuration](#configuration)
 	- [Examples](#examples)
 		- [Global cache with default configuration](#global-cache-with-default-configuration)
@@ -19,6 +19,10 @@ If the property `ignoreQuery=true` the *key* will contain only the `path` part o
 	- [Notes](#notes)
 - [License](#license)
 <!-- /TOC -->
+
+## Installation
+
+`npm install clydeio-memory-cache --save`
 
 ## Configuration
 
